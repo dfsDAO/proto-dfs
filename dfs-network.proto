@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "dfs-dag.proto";
+
+package network;
+
+option go_package = "github.com/dfsDAO/go-dfs-dao/network";
+
+message GetRequest {};
+message GetResponse { dag.Object object = 1; };
+
+service Network { rpc Get(GetRequest) returns (GetResponse); }

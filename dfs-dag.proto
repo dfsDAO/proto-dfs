@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dag;
+
+option go_package = "github.com/dfsDAO/go-dfs-dao/dag";
+
+message Object {
+  bytes data = 1;
+  repeated Link links = 2;
+};
+
+message Link {
+  bytes hash = 1;
+  string name = 2;
+  uint64 size = 3;
+}
